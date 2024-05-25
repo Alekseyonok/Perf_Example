@@ -6,6 +6,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="UDV_File_Config">
@@ -113,7 +115,7 @@
         </collectionProp>
       </HeaderManager>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -150,7 +152,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -210,7 +212,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="2111395962">Example Domain</stringProp>
             </collectionProp>
@@ -227,12 +229,14 @@
           <stringProp name="ActionProcessor.duration">0</stringProp>
         </TestAction>
         <hashTree>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
-            <stringProp name="ConstantTimer.delay">5000</stringProp>
-          </ConstantTimer>
+          <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer">
+            <stringProp name="ConstantTimer.delay">${__P(THINK_TIME, 4000)}</stringProp>
+            <stringProp name="RandomTimer.range">${__P(THINK_TIME_DEVIATION, 1000)}</stringProp>
+          </GaussianRandomTimer>
           <hashTree/>
         </hashTree>
       </hashTree>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
+
