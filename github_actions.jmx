@@ -190,9 +190,9 @@
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread_Group">
-        <stringProp name="ThreadGroup.num_threads">${__P(WEB_VUSERS, 1)}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">${__P(WEB_RAMP_UP, 120)}</stringProp>
-        <stringProp name="ThreadGroup.duration">${__P(WEB_DURATION, 180)}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(WEB_VUSERS, 3)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${__P(WEB_RAMP_UP, 300)}</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(WEB_DURATION, 360)}</stringProp>
         <longProp name="ThreadGroup.delay">0</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
